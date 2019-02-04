@@ -1,0 +1,13 @@
+
++ HTML SESSION 1
+-------------------------------------
++ JS STARTER
+
+coder une fonction retournant la liste d'éléments HTML passés en argument. 
+
+ex:
+var res2 = getAllElements("div");
+var res3 = getAllElements("table td");
+var res3 = getAllElements("li.item");
+-------------------------------------
++ COMMENCER => FONCTION PARAM RETURN 1

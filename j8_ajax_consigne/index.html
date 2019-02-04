@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax notice</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            font-family: Avenir;
+        }
+        .title {
+            color: dodgerblue;
+            margin: 10px 0;
+        }
+        .title.main {
+            grid-column: 1 / 7;
+        }
+        #app {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+        #consigne {
+            grid-column: 1 / 5;
+        }
+        .parag {
+            padding: 10px;
+        }
+        .separator {
+            margin: 10px 0;
+        }
+        #widget {
+            grid-column: 5 / 7;
+        }
+        .btn {
+            border: 1px solid darkgray;
+            border-radius: .3rem;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body id="app">
+    <h1 class="title main">AJAX consignes</h1>
+    <div id="consigne">
+        <p class="parag">
+            Utiliser un lien CDN pour importer la librairie axios.<br>
+            Lire attentivement la documentation technique.<br>
+            En HTML, poser 1 bouton pour READ.<br>
+            Au click lancer un appel AJAX GET via axios.<br>
+            Démarrer spring boot avec le projet fouleStaque...<br>
+            L'URL de la requête ressemblera à => http://localhost:8080/fo/categories.<br>
+            Connecter votre front à votre backend Java.<br>
+            Récupérer une ressource depuis une BDD (de préférence une liste en format JSON).<br>
+            Modifier le document pour afficher le résultat.
+        </p>
+        <hr class="seprator">
+        <p class="parag">
+            Créer un formulaire pour poster des catégories.<br>
+            Ce formulaire contiendra donc un input texte pour le libélé de la cat,<br>
+             et un bouton pour la soumission vers le serveur.<br>
+             Utiliser axios en mode POST pour envoyer les données saisies.<br>
+        </p>
+    </div>
+    <div id="widget">
+        <button id="get_categories" class="btn">get categories</button>
+        <table id="res"></table>
+    </div>
+</body>
+</html>

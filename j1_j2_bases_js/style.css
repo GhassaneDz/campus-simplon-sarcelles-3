@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Avenir;
+}
+.title {
+    color: dodgerblue;
+}
+.tabler, .tabler .cell, td, th {
+    border: 1px solid;
+}
+.tabler.collapsed {
+    border-collapse: collapse;
+}
+.player-custom {
+    border: 1px solid;
+    padding: 20px;
+    display: flex;
+}
+.player-custom .btn {
+    outline: none;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: .3rem;
+    color: white;
+    background: dodgerblue;
+    max-height: 32px;
+    max-width: 120px;
+}
+.player-custom .btn:hover, .player-custom .btn.is-active {
+    background: darkorange;
+}
+#player_one {
+    width: 85%;
+}

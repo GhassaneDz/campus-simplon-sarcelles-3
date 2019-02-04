@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Session 1</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js"></script>
+</head>
+
+<body>
+
+    <h1>Premiers pas !</h1>
+    <!-- snippet emmet !!! -->
+    <!-- h2+p>img^h2+ul>li*3 -->
+    <h2>Placer une image dans un paragraphe</h2>
+    <p>Un paragraphe contenant du texte et une image
+        <img src="https://i.skyrock.net/8394/88358394/pics/3268189050_1_2_PTcqfvCX.jpg" alt="Binaire" style="max-width: 480px;">Constatez
+        que le texte...</p>
+    <h2>Utiliser les styles inline (en ligne)</h2>
+    <p>
+        Un paragraphe contenant <br>
+        <span style="color:green;">des spans</span> de couleurs <span style="color:orange;">différentes</span>et <br>
+        un <a href="https://www.google.com">un lien</a>le tout sur plusieurs lignes
+        <span>Démarrer son navigateur</span><br>
+        <span>Ouvrir la console</span><br>
+        <span>Coder !</span>
+    </p>
+    <hr>
+    <h2 class="title">Liste simple</h2>
+    <ol>
+        <li>Démarrer </li>
+        <li>Ouvrir la console</li>
+        <li> Coder </li>
+    </ol>
+    <h2 class="title">Listes imbriquées</h2>
+    <ol>
+        <li>element de niveau 1.1 </li>
+        <li>element de niveau 1.2
+            <ul>
+                <li>
+                    premier sous élément du deuxième élément numéroté
+                    <ol>
+                        <li>ajoutons y sous liste</li>
+                        <li>Elle est numerotée</li>
+                        <li>c'est toujours ok?</li>
+                    </ol>
+                </li>
+                <li> 2eme sous element du deuxième élément numérotée</li>
+                <li> 3eme sous element du troixième element numerotée</li>
+            </ul>
+        </li>
+        <li> element de niveau 1.3 </li>
+    </ol>
+    <h2 class="title">Table simple</h2>
+    <!-- snippet emmet + tabulation -->
+    <!-- table>(tr>td*2)*2 -->
+    <table class="tabler">
+        <tr>
+            <td class="cell">As</td>
+            <td class="cell">Trèfle</td>
+        </tr>
+        <tr>
+            <td class="cell">Carreau</td>
+            <td class="cell">C&oelig;ur</td>
+        </tr>
+    </table>
+    <h2 class="title">Table un peu moins simple</h2>
+    <table class="tabler collapsed">
+
+    </table>
+    <table class="tabler collapsed">
+        <thead>
+            <tr>
+                <th colspan="2"></th>
+                <th colspan="2">Premier groupe</th>
+                <th colspan="2">Deuxieme groupe</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Personne</th>
+                <th>Singulier</th>
+                <th>Pluriel</th>
+                <th>Singulier</th>
+                <th>Pluriel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">Présent</td>
+                <td>1</td>
+                <td>je code</td>
+                <td>nous codons</td>
+                <td>je réussis</td>
+                <td>nous réussissons</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>tu codes</td>
+                <td>vous codez</td>
+                <td>tu réussis</td>
+                <td>vous réussissez</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>il/elle code</td>
+                <td>ils/elles codent</td>
+                <td>il/elle réussit</td>
+                <td>ils/elles réussissent</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <div class="player-custom">
+        <video id="player_one" class="video">
+            <source src="./assets/video/big_buck_bunny.mp4" type="video/mp4">
+            <source src="./assets/video/big_buck_bunny.webm" type="video/webm">
+        </video>
+        <button class="btn start">start</button>
+        <button class="btn pause is-active">pause</button>
+    </div>
+
+
+</body>
+
+</html>

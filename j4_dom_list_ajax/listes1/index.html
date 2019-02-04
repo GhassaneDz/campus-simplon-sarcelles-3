@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Listes I</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+    <script src="./app.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-family: Avenir;
+        }
+        .title {
+            color: dodgerblue
+        }
+        .btn {
+            border-radius: .35rem;
+            cursor: pointer;
+            height: 32px;
+            outline: none;
+        }
+        .btn:hover {
+            background: darkorange;
+            color: white;
+        }
+        #todo_list .input.text {
+            height: 32px;
+            min-width: 220px;
+            outline: none;
+        }
+        #todos {
+            list-style: circle;
+        }
+        #todos .item {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            width: 30vw;
+        }
+        #todos .item .widgets {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            width: 20%;
+        }
+        #todos .input[type=checkbox] {
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        #todos .move-icons {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">JS - Listes I</h1>
+    <div id="todo_list">
+        <input type="text" id="user_input" class="input text">
+        <input type="button" id="add_todo" value="ajouter todo" class="btn">
+        <input type="button" id="del_todo" value="supprimer todo" class="btn">
+        <hr>
+        <ul id="todos"></ul>
+    </div>
+</body>
+
+</html>
