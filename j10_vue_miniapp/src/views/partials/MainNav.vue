@@ -6,6 +6,7 @@
       <router-link class="clickable item" tag="li" to="/simplantes">Simplantes</router-link>
       <router-link class="clickable item" tag="li" to="/first-crud">CRUD</router-link>
       <router-link class="clickable item" tag="li" to="/10-percent-game">10%</router-link>
+      
     </ul>
   </nav>
 </template>
