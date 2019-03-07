@@ -7,8 +7,6 @@
   </nav>
 </template>
 
-</template>
-
 <script>
 export default {
   computed: {
@@ -42,6 +40,12 @@ export default {
     &:hover {
         color: #42b983;
     }
+  }
+}
+
+@media(min-width: 519px) {
+  #nav_mobile {
+    display: none;
   }
 }
 </style>

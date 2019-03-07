@@ -2,18 +2,15 @@
   <header id="header_main">
     <Logo/>
     <NavMain/>
-    <Burger />
   </header>
 </template>
 
 <script>
 import NavMain from "./NavMain.vue";
 import Logo from "@/components/Logo.vue";
-import Burger from "@/components/Burger.vue";
 
 export default {
   components: {
-    Burger,
     NavMain,
     Logo
   }

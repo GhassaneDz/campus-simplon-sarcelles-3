@@ -1,11 +1,17 @@
 <template>
   <div class="page register">
-    <h1>This is an profile page</h1>
+    <h1>Register</h1>
+    <FormRegister />
   </div>
 </template>
 
 <script>
-export default {};
+import FormRegister from "@/components/FormRegister.vue";
+export default {
+  components: {
+    FormRegister
+  }
+};
 </script>
 
 <style>

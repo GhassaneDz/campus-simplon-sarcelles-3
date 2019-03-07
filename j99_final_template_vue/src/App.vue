@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Burger />
     <HeaderMain/>
     <NavMobile />
     <!-- router-view représente toutes les routes de premiers niveaux -->
@@ -8,14 +9,17 @@
   </div>
 </template>
 <script>
+import Burger from "@/components/Burger.vue";
 import HeaderMain from "@/views/partials/Header.vue";
 import NavMobile from "@/views/partials/NavMobile.vue";
 import FooterMain from "@/views/partials/Footer.vue";
+
 export default {
   components: {
     HeaderMain,
     FooterMain,
-    NavMobile
+    NavMobile,
+    Burger
   }
 };
 </script>
@@ -28,6 +32,14 @@ export default {
 
 a {
   text-decoration: none;
+}
+
+body {
+  font-size: 16px;
+}
+
+.clickable, .btn {
+    cursor: pointer;
 }
 
 .page {

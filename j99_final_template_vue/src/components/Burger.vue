@@ -1,17 +1,11 @@
 <template>
-    <!-- <i id="burger" class="fas fa-bars fa-lg" :class="{'is-active': isActive}" 
-    @click="isActive = !isActive"></i> -->
-    <i id="burger" class="fas fa-bars fa-lg" :class="{'is-active': isActive}" 
+    <i id="burger" class="fas fa-lg" 
+    :class="{'is-active fa-times': isActive, 'fa-bars': !isActive}" 
     @click="$store.commit('appEvents/toggleNavMobile')"></i>
 </template>
 
 <script>
 export default {
-    // data() {
-    //     return {
-    //         isActive: false
-    //     }
-    // },
     computed: {
         isActive() {
             return this.$store.getters["appEvents/navMobileStatus"];
@@ -23,6 +17,12 @@ export default {
 <style scoped lang="scss">
 #burger {
     cursor: pointer;
+    position: fixed;
+    z-index: 12;
+    right: 20px;
+    top: 45px;
+    padding: 0;
+    color: white;
 }
 #burger.is-active {
     color: #42b983;
