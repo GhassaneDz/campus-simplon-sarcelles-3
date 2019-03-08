@@ -4,18 +4,23 @@
     <HeaderMain/>
     <NavMobile />
     <!-- router-view représente toutes les routes de premiers niveaux -->
-    <router-view/>
+    <main id="content_main">
+      <AppMessage />
+      <router-view/>
+    </main>
     <FooterMain/>
   </div>
 </template>
 <script>
 import Burger from "@/components/Burger.vue";
+import AppMessage from "@/components/AppMessage.vue";
 import HeaderMain from "@/views/partials/Header.vue";
 import NavMobile from "@/views/partials/NavMobile.vue";
 import FooterMain from "@/views/partials/Footer.vue";
 
 export default {
   components: {
+    AppMessage,
     HeaderMain,
     FooterMain,
     NavMobile,
@@ -53,10 +58,12 @@ body {
   }
   position: relative;
 }
-.page {
-  padding: 60px 20px;
-  top: 120px;
+#content_main {
   position: relative;
+  top: 120px;
+}
+.page {
+  padding: 40px 20px;
   min-height: calc(100vh - (120px + 200px));
 }
 </style>
