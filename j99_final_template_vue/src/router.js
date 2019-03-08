@@ -32,7 +32,24 @@ const router = new Router({
     {
       path: '/profile',
       name: 'profile',
+      children: [
+        {
+          path: 'admin-panel',
+          name: 'admin-panel',
+          component: () => import(/* webpackChunkName: "about" */ './views/NotFound.vue')
+        },
+        {
+          path: 'edit',
+          name: 'profile-edit',
+          component: () => import(/* webpackChunkName: "about" */ './views/NotFound.vue')
+        },
+      ],
       component: () => import(/* webpackChunkName: "about" */ './views/Profile.vue')
+    },
+    {
+      path: "*",
+      name: "404",
+      component: () => import(/* webpackChunkName: "about" */ './views/NotFound.vue')
     }
   ]
 });
