@@ -61,11 +61,19 @@ export default {
       console.log("how many errors ? => ", errors);
 
       if (!errors) {
+        
+        this.$store.dispatch("users/register", this.user);
+
+        return;
+
         this.$store.commit("appEvents/setCurrentMessage", 
         {text: "all good papy", level: "success"});
+
       } else {
+
         this.$store.commit("appEvents/setCurrentMessage", 
         {text: "all wrong papy", level: "warning"});
+
       }
     },
     toggleEyeIcon(evt, mode) {

@@ -28,6 +28,7 @@ export default {
     justify-content: center;
     align-items: center;
     grid-row: 2 / 3;
+    padding-top: 40px;
 }
 .avatar {
     border: 3px solid;

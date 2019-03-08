@@ -65,7 +65,7 @@ const router = new Router({
     },
     {
       path: "*",
-      name: "404",
+      name: "404-admin",
       component: () => import(/* webpackChunkName: "404" */ './views/NotFound.vue')
     }
   ]

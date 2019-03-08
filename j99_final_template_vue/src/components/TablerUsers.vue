@@ -31,7 +31,9 @@
 
 <script>
 export default {
-  beforeCreate() {},
+  beforeCreate() {
+    this.$store.dispatch("users/getAll");
+  },
   data() {
     return {
       userToDelete: [],
