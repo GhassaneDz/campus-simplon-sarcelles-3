@@ -1,7 +1,10 @@
 export default {
     namespaced: true,
     state: {
-        appMessage: "default message from store",
+        appMessage: {
+            text: "",
+            level: ""
+        },
         isNavMobileOn: false
     },
     getters: {
@@ -9,15 +12,27 @@ export default {
             return state.isNavMobileOn
         },
         currentAppMessage({ appMessage }) {
-            return appMessage;
+            return appMessage.text;
+        },
+        currentAppMessageLevel({ appMessage }) {
+            return appMessage.level;
         }
     },
     mutations: {
         toggleNavMobile(state) {
             state.isNavMobileOn = !state.isNavMobileOn;
         },
+        resetMessage(state) {
+            state.appMessage.text = "";
+            state.appMessage.level = "";
+        },
         setCurrentMessage(state, msg) {
-            state.appMessage = msg;
+            const validCSS = ["success", "warning", "error"];
+            if (!validCSS.includes(msg.level)) {
+                return console.error("The provided CSS Class is not Valid !");
+            }
+            state.appMessage.text = msg.text;
+            state.appMessage.level = msg.level;
         }
     }
 };

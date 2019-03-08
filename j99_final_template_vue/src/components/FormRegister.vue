@@ -17,7 +17,7 @@
 
     <label for="pass_confirm" class="label">Please confirm password</label>
     <div class="wrap">
-      <input ref="confirm" id="pass_confirm" type="password" class="input" required>
+      <input ref="confirm" id="pass_confirm" type="password" class="input" required value="123Soleil">
       <i class="icon clickable fa fa-eye-slash" @click="toggleEyeIcon($event, 'confirm')"></i>
     </div>
 
@@ -35,7 +35,7 @@ export default {
         // email: null,
         // password: null
         name: "gui",
-        lastname: null,
+        lastname: "amg",
         email: "gui@gui.com",
         password: "123Soleil"
       }
@@ -61,13 +61,15 @@ export default {
     checkForm() {
       console.log("user to register =>", this.user);
       let errors = 0;
-    //   errors += this.checkAllFields() ? 0 : 1;
       errors += this.checkPasswordConfirm() ? 0 : 1;
-      console.log(errors);
+      console.log("how many errors ? => ", errors);
+
       if (!errors) {
-        // this.$store.dispatch("users/register");
+        this.$store.commit("appEvents/setCurrentMessage", 
+        {text: "all good papy", level: "success"});
       } else {
-        // afficher message d'erreur !!!
+        this.$store.commit("appEvents/setCurrentMessage", 
+        {text: "all wrong papy", level: "warning"});
       }
     },
     toggleEyeIcon(evt, mode) {
