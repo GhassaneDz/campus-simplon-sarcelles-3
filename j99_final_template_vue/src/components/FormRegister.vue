@@ -88,7 +88,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   max-width: 540px;
-  margin: 0 auto;
+  margin: 20px auto 0;
   padding: 10px;
   border: 1px solid;
   border-radius: 0.3rem;
