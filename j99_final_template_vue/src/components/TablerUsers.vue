@@ -4,8 +4,13 @@
       <tr>
         <th class="cell" v-for="(val, prop) in users[0]" :key="prop">{{ prop }}</th>
         <th class="cell">
-          <button class="btn" @click="test">
+          <button class="btn" @click="deleteUsers">
             <i class="fa fa-trash fa-lg"></i>
+          </button>
+        </th>
+        <th class="cell">
+          <button class="btn" @click="setUsersAsAdmin">
+            <i class="fas fa-unlock-alt fa-lg" title="set as admin"></i>
           </button>
         </th>
       </tr>
@@ -14,7 +19,10 @@
       <tr class="row" v-for="(user, n) in users" :key="n" :id="`user_${user.id}`">
         <td class="cell" v-for="(val, prop) in user" :key="prop">{{ val }}</td>
         <td class="cell">
-          <input type="checkbox" class="clickable" :value="Number(`${user.id}`)" v-model="selected">
+          <input type="checkbox" class="clickable" :value="Number(`${user.id}`)" v-model="userToDelete">
+        </td>
+        <td class="cell">
+          <input type="checkbox" class="clickable" :value="Number(`${user.id}`)" v-model="userToAdmin">
         </td>
       </tr>
     </tbody>
@@ -26,7 +34,8 @@ export default {
   beforeCreate() {},
   data() {
     return {
-      selected: []
+      userToDelete: [],
+      userToAdmin: [],
     };
   },
   computed: {
@@ -35,9 +44,12 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log(this.selected);
-    }
+    deleteUsers() {
+      console.log("user to delete =>", this.userToDelete);
+    },
+    setUsersAsAdmin() {
+      console.log("user to set as admin =>", this.userToAdmin);
+    },
   }
 };
 </script>

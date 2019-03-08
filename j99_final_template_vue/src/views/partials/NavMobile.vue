@@ -43,7 +43,7 @@ export default {
   }
 }
 
-@media(min-width: 519px) {
+@media(min-width: 521px) {
   #nav_mobile {
     display: none;
   }
