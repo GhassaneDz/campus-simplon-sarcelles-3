@@ -72,6 +72,9 @@ const router = new Router({
 });
 
 router.afterEach(() => {
+
+  store.commit("appEvents/resetMessage");
+  
   if (store.getters["appEvents/navMobileStatus"] === true) {
     store.commit("appEvents/toggleNavMobile");
   }
