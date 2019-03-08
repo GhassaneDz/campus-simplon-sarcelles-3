@@ -1,9 +1,10 @@
-// import axios from "axios";
-// import auth from "./utils/auth";
+import axios from "axios";
+import auth from "./utils/auth";
 
+console.log(auth);
+
+axios.defaults.baseURL = "http://localhost:8080/api/"; // le port de votre serveur
 /*
-
-axios.defaults.baseURL = "http://localhost:9999"; // le port de votre serveur
 
 axios.interceptors.request.use(config => {
     // Do something before request is sent...
