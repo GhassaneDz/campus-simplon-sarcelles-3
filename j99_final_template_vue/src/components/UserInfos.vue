@@ -25,7 +25,9 @@ export default {
 <style scoped lang="scss">
 #profile_infos {
     display: flex;
+    justify-content: center;
     align-items: center;
+    grid-row: 2 / 3;
 }
 .avatar {
     border: 3px solid;

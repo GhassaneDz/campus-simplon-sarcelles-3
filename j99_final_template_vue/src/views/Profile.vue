@@ -2,14 +2,11 @@
   <div id="profile" class="page profile">
     <h1 class="title main">My profile</h1>
     <aside id="aside">
-      <NavAdmin/>
+      <NavAdmin />
       <hr>
       <NavUser />
     </aside>
-    <main id="main-content">
-  
-      <router-view class="sub-page"></router-view>
-    </main>
+    <router-view class="sub-page"></router-view>
   </div>
 </template>
 <script>
@@ -40,7 +37,7 @@ export default {
   grid-row: 1 / 5;
 }
 
-#main-content {
+.sub-page {
   grid-row: 2 / 5;
   grid-column: 3 / 9;
   padding-left: 20px;
