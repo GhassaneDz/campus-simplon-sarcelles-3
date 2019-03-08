@@ -43,7 +43,7 @@ body {
   font-size: 16px;
 }
 
-.clickable, .btn {
+.clickable, .btn, .link {
     cursor: pointer;
 }
 
@@ -53,17 +53,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  & > *:not(.page) {
-    padding: 10px 20px;
-  }
   position: relative;
 }
 #content_main {
   position: relative;
-  top: 120px;
+  top: 80px;
 }
 .page {
   padding: 40px 20px;
-  min-height: calc(100vh - (120px + 200px));
+  min-height: calc(100vh - (80px + 200px));
 }
 </style>

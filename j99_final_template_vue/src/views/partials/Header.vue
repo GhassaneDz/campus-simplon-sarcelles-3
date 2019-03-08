@@ -19,11 +19,12 @@ export default {
 
 <style lang="scss" scoped>
 #header_main {
+  padding: 10px 20px;
   align-items: center;
   background: #212929;
   color: white;
   display: flex;
-  height: 120px;
+  height: 80px;
   justify-content: space-between;
   position: fixed;
   width: 100%;

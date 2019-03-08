@@ -15,10 +15,11 @@ export default {};
 
 <style scoped>
 #footer_main {
+  padding: 10px 20px;
   height: 200px;
   background: #212929;
   color: white;
-  top: 120px;
+  top: 80px;
   position: relative;
 }
 </style>

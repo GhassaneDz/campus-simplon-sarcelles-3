@@ -2,30 +2,47 @@
   <div id="profile" class="page profile">
     <h1 class="title main">My profile</h1>
     <aside id="aside">
-      <nav id="nav">
-        <router-link to="admin-panel">admin</router-link>
-        <router-link to="edit">edit</router-link>
-        <a href="#">logout</a>
-      </nav>
+      <NavAdmin/>
+      <hr>
+      <NavUser />
     </aside>
-    <router-view></router-view>
+    <main id="main-content">
+  
+      <router-view class="sub-page"></router-view>
+    </main>
   </div>
 </template>
+<script>
+import User from "./partials/NavAdmin.vue";
+import NavAdmin from "./partials/NavAdmin.vue";
+import NavUser from "./partials/NavUser.vue";
+export default {
+  components: {
+    NavAdmin,
+    NavUser
+  }
+};
+</script>
+
 <style scoped lang="scss">
 #profile {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 44px repeat(3, 1fr);
 }
 .title.main {
-  grid-column: 2 / 13;
+  grid-column: 3 / 9;
 }
 #aside {
-  grid-column: 1 / 2;
+  border-right: 2px solid;
+  padding-right: 10px;
+  grid-column: 1 / 3;
   grid-row: 1 / 5;
 }
-#nav {
-  display: flex;
-  flex-direction: column;
+
+#main-content {
+  grid-row: 2 / 5;
+  grid-column: 3 / 9;
+  padding-left: 20px;
 }
 </style>

@@ -30,10 +30,6 @@ export default {
   data() {
     return {
       user: {
-        // name: null,
-        // lastname: null,
-        // email: null,
-        // password: null
         name: "gui",
         lastname: "amg",
         email: "gui@gui.com",

@@ -1,9 +1,9 @@
 <template>
   <nav id="nav_main">
-    <router-link class="link" to="/">Home</router-link>
+    <router-link class="link" to="/" exact>Home</router-link>
     <router-link class="link" to="/about">About</router-link>
     <router-link class="link" to="/login">Login</router-link>
-    <router-link class="link" to="/profile">Profile</router-link>
+    <router-link class="link" to="/profile/infos">Profile</router-link>
   </nav>
 </template>
 

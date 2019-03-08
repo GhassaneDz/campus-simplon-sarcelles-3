@@ -1,7 +1,5 @@
 import axios from "axios";
 
-console.log("store user", axios);
-
 const defaultUser = {
     id: 123,
     name: "guillaume",
@@ -37,10 +35,10 @@ const userStore = {
         allUsers: defaultUsers
     },
     getters: {
-        currentUser(state) {
+        current(state) {
             return state.currentUser;
         },
-        allUsers(state) {
+        all(state) {
             return state.allUsers;
         }
     },

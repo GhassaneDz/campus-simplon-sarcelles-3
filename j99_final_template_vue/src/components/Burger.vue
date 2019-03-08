@@ -20,7 +20,7 @@ export default {
     position: fixed;
     z-index: 12;
     right: 20px;
-    top: 45px;
+    top: 32.5px;
     padding: 0;
     color: white;
 }

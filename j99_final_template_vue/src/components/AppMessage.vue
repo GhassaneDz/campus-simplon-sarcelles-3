@@ -1,20 +1,18 @@
 <template>
   <div id="app_message" class="msg" :class="level" v-if="msg">
     <span>{{ msg }}</span>
-    <i class="icon fa fa-times" 
-      @click="$store.commit('appEvents/resetMessage')">
-    </i>
+    <i class="icon fa fa-times" @click="$store.commit('appEvents/resetMessage')"></i>
   </div>
 </template>
 <script>
 export default {
   computed: {
-      msg() {
-        return this.$store.getters["appEvents/currentAppMessage"];
-      },
-      level() {
-        return this.$store.getters["appEvents/currentAppMessageLevel"];
-      }
+    msg() {
+      return this.$store.getters["appEvents/currentAppMessage"];
+    },
+    level() {
+      return this.$store.getters["appEvents/currentAppMessageLevel"];
+    }
   }
 };
 </script>
@@ -35,9 +33,11 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
   max-width: 540px;
   padding: 10px;
   position: relative;
+  top: 20px;
 }
 .success {
   background-color: #d4edda;

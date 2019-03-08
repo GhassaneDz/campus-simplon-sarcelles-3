@@ -22,26 +22,43 @@ const router = new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
+      component: () => import(/* webpackChunkName: "login" */ './views/Login.vue')
     },
     {
       path: '/register',
       name: 'register',
-      component: () => import(/* webpackChunkName: "about" */ './views/Register.vue')
+      component: () => import(/* webpackChunkName: "register" */ './views/Register.vue')
     },
     {
       path: '/profile',
       name: 'profile',
       children: [
         {
-          path: 'admin-panel',
+          path: 'admin',
           name: 'admin-panel',
-          component: () => import(/* webpackChunkName: "about" */ './views/NotFound.vue')
+          component: () => import(/* webpackChunkName: "admin-panel" */ './views/AdminPanel.vue'),
+          children: [
+            {
+              path: 'users',
+              name: 'manage-users',
+              component: () => import(/* webpackChunkName: "admin-panel" */ './components/TablerUsers.vue')
+            },
+            {
+              path: "*",
+              name: "404",
+              component: () => import(/* webpackChunkName: "404" */ './views/NotFound.vue')
+            }
+          ] 
+        },
+        {
+          path: 'infos',
+          name: 'profile-infos',
+          component: () => import(/* webpackChunkName: "profile-edit" */ './components/UserInfos.vue')
         },
         {
           path: 'edit',
           name: 'profile-edit',
-          component: () => import(/* webpackChunkName: "about" */ './views/NotFound.vue')
+          component: () => import(/* webpackChunkName: "profile-edit" */ './views/ProfileEdit.vue')
         },
       ],
       component: () => import(/* webpackChunkName: "about" */ './views/Profile.vue')
@@ -49,7 +66,7 @@ const router = new Router({
     {
       path: "*",
       name: "404",
-      component: () => import(/* webpackChunkName: "about" */ './views/NotFound.vue')
+      component: () => import(/* webpackChunkName: "404" */ './views/NotFound.vue')
     }
   ]
 });
