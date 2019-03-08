@@ -31,12 +31,10 @@ export default {
     checkForm() {
       console.log("user to login =>", this.user);
       let errors = 0;
-      errors += this.checkPasswordConfirm() ? 0 : 1;
-      console.log("how many errors ? => ", errors);
 
       if (!errors) {
         this.$store.commit("appEvents/setCurrentMessage", 
-        {text: "login ok", level: "success"});
+        {text: "Login ok", level: "success"});
       } else {
         this.$store.commit("appEvents/setCurrentMessage", 
         {text: "Wrong infos sorry", level: "warning"});
