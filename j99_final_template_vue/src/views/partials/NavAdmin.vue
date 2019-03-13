@@ -4,8 +4,20 @@
       <router-link tag="li" class="link" to="/profile/admin">
         <span>admin</span>
         <ul>
-          <router-link tag="li" class="link" to="/profile/admin/users">manage users</router-link>
-          <router-link tag="li" class="link" to="/profile/admin/yourstuff">manage ressources</router-link>
+          <router-link
+          exact
+            tag="li"
+            active-class="is-active"
+            class="link"
+            to="/profile/admin/users-manager"
+          >users</router-link>
+          <router-link
+          exact
+            tag="li"
+            active-class="is-active"
+            class="link"
+            to="/profile/admin/articles-manager"
+          >articles</router-link>
         </ul>
       </router-link>
     </ul>
@@ -20,11 +32,14 @@ export default {};
 .nav {
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 0 0 10px;
   .list {
     list-style: none;
     text-align: left;
     padding-left: 0;
+    .link.is-active {
+      color: darkorange;
+    }
   }
 }
 </style>

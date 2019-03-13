@@ -19,7 +19,7 @@ export default {};
   height: 200px;
   background: #212929;
   color: white;
-  top: 80px;
+  top: 60px;
   position: relative;
 }
 </style>

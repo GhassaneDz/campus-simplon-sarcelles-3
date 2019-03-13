@@ -1,9 +1,10 @@
 import axios from "axios";
 import auth from "./utils/auth";
+// import Vue from "vue";
+import store from "./store/store"
+// const vm = new Vue();
 
-console.log(auth);
-
-axios.defaults.baseURL = "http://localhost:8080/api"; // le port de votre serveur
+axios.defaults.baseURL = "http://localhost:9999/api"; // le port de votre serveur
 
 /*
 
@@ -22,6 +23,18 @@ axios.interceptors.request.use(config => {
     return Promise.reject(error);
 });
 
-export default axios.defaults;
 
 */
+
+axios.interceptors.response.use(function(response) {
+  const appMessage = response.data.appMessage;
+  if (appMessage) {
+      store.commit("appEvents/setCurrentMessage", {
+        text: appMessage.text,
+        level: appMessage.level
+      });
+  }
+  return response;
+});
+
+export default axios.defaults;

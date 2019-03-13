@@ -1,6 +1,5 @@
 <template>
   <div id="profile" class="page profile">
-    <h1 class="title main">My profile</h1>
     <aside id="aside">
       <NavAdmin />
       <hr>
@@ -10,7 +9,6 @@
   </div>
 </template>
 <script>
-import User from "./partials/NavAdmin.vue";
 import NavAdmin from "./partials/NavAdmin.vue";
 import NavUser from "./partials/NavUser.vue";
 export default {
@@ -28,6 +26,7 @@ export default {
   grid-template-rows: 44px repeat(3, 1fr);
 }
 .title.main {
+  font-size: 1.2rem;
   grid-column: 3 / 9;
 }
 #aside {
@@ -38,7 +37,7 @@ export default {
 }
 
 .sub-page {
-  grid-row: 2 / 5;
+  grid-row: 1 / 5;
   grid-column: 3 / 9;
   padding-left: 20px;
 }

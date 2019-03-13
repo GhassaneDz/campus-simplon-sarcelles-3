@@ -7,50 +7,30 @@ const defaultUser = {
   email: "gui@ohm.com"
 };
 
-const defaultUsers = [
-  {
-    id: 13,
-    name: "toto",
-    lastname: "teteAzero",
-    email: "toto@foo.com"
-  },
-  {
-    id: 23,
-    name: "titi",
-    lastname: "parisien",
-    email: "titi@bar.com"
-  },
-  {
-    id: 66,
-    name: "tata",
-    lastname: "yoyo",
-    email: "tata@baz.com"
-  }
-];
-
 const userStore = {
   namespaced: true,
   state: {
     currentUser: defaultUser,
-      allUsers: defaultUsers
+    allUsers: []
   },
   getters: {
     current(state) {
       return state.currentUser;
     },
     all(state) {
+      
       return state.allUsers;
     }
   },
   mutations: {
     setUsers(state, users) {
-        state.allUsers = users;
+      state.allUsers = users;
     }
   },
   actions: {
     register(ctx, user) {
-      axios
-        .post("/users", user)
+      return axios
+        .post("/user", user)
         .then(res => {
           console.log("response server", res);
         })
@@ -58,21 +38,20 @@ const userStore = {
           console.error("error server", err);
         });
     },
-    login(ctx) {},
-    logout(ctx) {},
+    // login(ctx) {},
+    // logout(ctx) {},
     getAll(ctx) {
       axios
-        .get("/users")
+        .get("/user")
         .then(res => {
-          console.log("good", res.data);
           ctx.commit("setUsers", res.data);
         })
         .catch(err => {
           console.error("baaad", err);
         });
     },
-    updateUser(ctx) {},
-    deleteUser(ctx) {}
+    // updateUser(ctx) {},
+    // deleteUser(ctx) {}
   }
 };
 

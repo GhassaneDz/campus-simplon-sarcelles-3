@@ -24,7 +24,7 @@ export default {
   background: #212929;
   color: white;
   display: flex;
-  height: 80px;
+  height: 60px;
   justify-content: space-between;
   position: fixed;
   width: 100%;

@@ -5,6 +5,6 @@
 </template>
 <style lang="scss" scoped>
 #logo {
-    max-height: 60px;
+    max-height: 40px;
 }
 </style>

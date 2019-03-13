@@ -3,9 +3,9 @@
     <Burger />
     <HeaderMain/>
     <NavMobile />
-    <!-- router-view représente toutes les routes de premiers niveaux -->
     <main id="content_main">
       <AppMessage />
+      <!-- ce router-view représente toutes les routes de premiers niveaux -->
       <router-view/>
     </main>
     <FooterMain/>
@@ -40,7 +40,7 @@ a {
 }
 
 body {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .clickable, .btn, .link {
@@ -57,10 +57,10 @@ body {
 }
 #content_main {
   position: relative;
-  top: 80px;
+  top: 60px;
 }
 .page {
   padding: 40px 20px;
-  min-height: calc(100vh - (80px + 200px));
+  min-height: calc(100vh - (60px + 200px));
 }
 </style>

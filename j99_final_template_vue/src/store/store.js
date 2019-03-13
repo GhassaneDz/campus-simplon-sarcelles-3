@@ -1,16 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import appEvents from "./appEvents"
-import users from "./users";
+import userStore from "./user";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
   modules: {
     appEvents,
-    users
+    users: userStore
   }
 });
