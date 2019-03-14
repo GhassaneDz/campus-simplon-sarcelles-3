@@ -68,7 +68,7 @@ const userStore = {
       axios
         .get("/category/" + id)
         .then(res => {
-          console.log(res);
+          console.log("le server retourne une category", res);
           ctx.commit("setCurrentCategory", res.data);
         })
         .catch(err => {

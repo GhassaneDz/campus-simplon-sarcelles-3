@@ -33,8 +33,9 @@ export default {
       let errors = 0;
 
       if (!errors) {
-        this.$store.commit("appEvents/setCurrentMessage", 
-        {text: "Login ok", level: "success"});
+        this.$store.dispatch("users/login", this.user);
+        // this.$store.commit("appEvents/setCurrentMessage", 
+        // {text: "Login ok", level: "success"});
       } else {
         this.$store.commit("appEvents/setCurrentMessage", 
         {text: "Wrong infos sorry", level: "warning"});

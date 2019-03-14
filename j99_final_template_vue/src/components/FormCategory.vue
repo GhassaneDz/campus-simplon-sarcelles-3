@@ -10,9 +10,11 @@
 </template>
 <script>
 export default {
-  created() {
+  created() { 
+    // console.log(this.$route);
     if (this.isEditing()) {
       this.$store.dispatch("category/get", this.$route.params.id);
+      // ci-dessus => hey store !!!! get moi la cat qui a l'id présent dans l'url
     }
   },
   computed: {

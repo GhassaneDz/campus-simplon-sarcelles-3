@@ -1,4 +1,5 @@
 import axios from "axios";
+import auth from "./../utils/auth";
 
 const defaultUser = {
   id: 123,
@@ -42,10 +43,20 @@ const userStore = {
           console.log("response server", res);
         })
         .catch(err => {
-          console.error("error server", err);
+          console.warn("error server", err);
         });
     },
-    // login(ctx) {},
+    login(ctx, user) {
+      // return console.log(user);
+      axios.post("/login", user, { errorHandle: false })
+      .then(res => {
+        console.log(res);
+        auth.setLocalToken(res.data);
+      })
+      .catch(err => {
+        console.error(err); 
+      })
+    },
     // logout(ctx) {},
     getAll(ctx) {
       axios
@@ -64,7 +75,7 @@ const userStore = {
         console.log("server result deleting users", res, ctx);
         ctx.commit("deleteUsers", ids);
       }).catch(err => {
-        console.log(err);
+        console.log("@store", err);
       })
     }
   }
