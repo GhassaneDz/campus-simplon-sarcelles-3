@@ -44,14 +44,21 @@ const userStore = {
       axios
         .get("/user")
         .then(res => {
-          ctx.commit("setUsers", res.data);
+          ctx.commit("setUsers", res.data.users);
         })
         .catch(err => {
           console.error("baaad", err);
         });
     },
     // updateUser(ctx) {},
-    // deleteUser(ctx) {}
+    deleteUser(ctx, ids) {
+      axios.delete("/users")
+      .then(res => {
+        console.log(res);
+      }).catch(err => {
+        console.log(err);
+      })
+    }
   }
 };
 

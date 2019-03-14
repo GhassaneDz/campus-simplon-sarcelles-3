@@ -10,7 +10,7 @@
         </th>
         <th class="cell">
           <button class="btn" @click="setUsersAsAdmin">
-            <i class="fas fa-unlock-alt fa-lg" title="set as admin"></i>
+            <i class="fas fa-key fa-lg" title="set as admin"></i>
           </button>
         </th>
       </tr>

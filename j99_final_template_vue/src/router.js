@@ -43,6 +43,26 @@ const router = new Router({
             import(/* webpackChunkName: "admin-panel" */ "./views/AdminPanel.vue"),
           children: [
             {
+              path: "categories-manager",
+              name: "categories-manager",
+              component: () =>
+                import(/* webpackChunkName: "admin-panel" */ "./views/ManagerCategories.vue"),
+              children: [
+                {
+                  path: "create",
+                  name: "create-category",
+                  component: () =>
+                    import(/* webpackChunkName: "create-ressource" */ "./components/FormCategory.vue")
+                },
+                {
+                  path: "list",
+                  name: "list-categories",
+                  component: () =>
+                    import(/* webpackChunkName: "list-ressources" */ "./components/TablerCategories.vue")
+                }
+              ]
+            },
+            {
               path: "users-manager",
               name: "users-manager",
               component: () =>
@@ -72,7 +92,7 @@ const router = new Router({
                   path: "create",
                   name: "create-ressource",
                   component: () =>
-                    import(/* webpackChunkName: "create-ressource" */ "./components/FormRessource.vue")
+                    import(/* webpackChunkName: "create-ressource" */ "./components/FormArticle.vue")
                 },
                 {
                   path: "list",

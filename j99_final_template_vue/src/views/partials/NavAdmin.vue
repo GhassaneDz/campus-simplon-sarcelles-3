@@ -5,14 +5,21 @@
         <span>admin</span>
         <ul>
           <router-link
-          exact
+            exact
             tag="li"
             active-class="is-active"
             class="link"
             to="/profile/admin/users-manager"
           >users</router-link>
           <router-link
-          exact
+            exact
+            tag="li"
+            active-class="is-active"
+            class="link"
+            to="/profile/admin/categories-manager"
+          >categories</router-link>
+          <router-link
+            exact
             tag="li"
             active-class="is-active"
             class="link"

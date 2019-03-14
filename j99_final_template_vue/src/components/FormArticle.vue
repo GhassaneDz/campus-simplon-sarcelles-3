@@ -1,12 +1,12 @@
 <template>
     <form id="ressource" 
     @submit="$event.preventDefault();postRessource();">
-        <label for="name" class="clickable label">ressource name</label>
-        <input id="name" class="input" type="text" v-model="ressource.name">
+        <label for="name" class="clickable label">title</label>
+        <input id="name" class="input" type="text" v-model="article.title">
         <label for="date" class="clickable label">date</label>
-        <input id="date" class="input" type="date" v-model="ressource.date">
+        <input id="date" class="input" type="date" v-model="article.date">
         <label for="content" class="clickable label">content</label>
-        <textarea id="content" class="textarea" v-model="ressource.content"></textarea>
+        <textarea id="content" class="textarea" v-model="article.content"></textarea>
         <button class="btn">ok</button>
     </form>
 </template>
@@ -14,7 +14,7 @@
 export default {
     data() {
         return {
-            ressource: {
+            article: {
                 name: null,
                 date: null,
                 content: null
@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         postRessource() {
-            console.log("ressource à poster...", this.ressource);
+            console.log("ressource à poster...", this.article);
         }
     }
 }
