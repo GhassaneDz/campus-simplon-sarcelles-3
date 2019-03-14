@@ -1,19 +1,43 @@
 <template>
-    <form id="ressource" 
-    @submit="$event.preventDefault();">
-        <label for="name" class="clickable label">Category</label>
-        <input id="name" class="input" type="text" v-model="category">
-        <button class="btn">ok</button>
-    </form>
+  <form
+    id="ressource"
+    @submit="$event.preventDefault();submit();"
+  >
+    <label for="name" class="clickable label">Category</label>
+    <input id="name" class="input" type="text" v-model="category.name" required>
+    <button class="btn">ok</button>
+  </form>
 </template>
 <script>
 export default {
-    data() {
-        return {
-            category: null
-        }
+  created() {
+    if (this.isEditing()) {
+      this.$store.dispatch("category/get", this.$route.params.id);
+    }
+  },
+  computed: {
+    category() {
+      const currentCategory = this.$store.getters["category/current"];
+      if (currentCategory && this.isEditing()) {
+        return currentCategory;
+      } else {
+        return {name: ""};
+      }
+    }
+  },
+  methods: {
+    isEditing() {
+      return this.$route.path.match("edit"); // si l'url de la page contient 'edit'
     },
-}
+    submit() {
+      if (this.isEditing()) {
+        this.$store.dispatch('category/update', this.category)
+      } else {
+        this.$store.dispatch('category/create', this.category)
+      }
+    }
+  }
+};
 </script>
 
 <style scoped lang="scss">

@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import appEvents from "./appEvents"
-import userStore from "./user";
+import user from "./user";
+import category from "./category";
+import article from "./article";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     appEvents,
-    users: userStore
+    article,
+    users: user,
+    category
   }
 });

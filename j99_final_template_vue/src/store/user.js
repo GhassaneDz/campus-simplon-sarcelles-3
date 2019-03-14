@@ -25,7 +25,14 @@ const userStore = {
   mutations: {
     setUsers(state, users) {
       state.allUsers = users;
-    }
+    },
+    deleteUsers(state, ids) {
+      state.allUsers = state.allUsers.filter(user => {
+        if (!ids.includes(user.id)) {
+          return user;
+        }
+      });
+    },
   },
   actions: {
     register(ctx, user) {
@@ -51,10 +58,11 @@ const userStore = {
         });
     },
     // updateUser(ctx) {},
-    deleteUser(ctx, ids) {
-      axios.delete("/users")
+    deleteUsers(ctx, ids) {
+      axios.delete("/user", { params: { ids } })
       .then(res => {
-        console.log(res);
+        console.log("server result deleting users", res, ctx);
+        ctx.commit("deleteUsers", ids);
       }).catch(err => {
         console.log(err);
       })

@@ -59,6 +59,12 @@ const router = new Router({
                   name: "list-categories",
                   component: () =>
                     import(/* webpackChunkName: "list-ressources" */ "./components/TablerCategories.vue")
+                },
+                {
+                  path: "edit/:id",
+                  name: "edit-category",
+                  component: () =>
+                    import(/* webpackChunkName: "list-ressources" */ "./components/FormCategory.vue")
                 }
               ]
             },
@@ -98,7 +104,13 @@ const router = new Router({
                   path: "list",
                   name: "list-ressources",
                   component: () =>
-                    import(/* webpackChunkName: "list-ressources" */ "./components/TablerRessources.vue")
+                    import(/* webpackChunkName: "list-ressources" */ "./components/TablerArticles.vue")
+                },
+                {
+                  path: "edit/:id",
+                  name: "edit-article",
+                  component: () =>
+                    import(/* webpackChunkName: "list-ressources" */ "./components/FormArticle.vue")
                 }
               ]
             },

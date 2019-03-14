@@ -1,13 +1,13 @@
 <template>
-  <div class="btns manager">
+  <div id="widget" class="btns manager">
     <router-link
       tag="button"
-      class="clickable fa fa-plus"
+      class="btn fa fa-plus"
       :to="path.create"
     ></router-link>
     <router-link
       tag="button"
-      class="clickable fa fa-eye"
+      class="btn fa fa-eye"
       :to="path.list"
     ></router-link>
   </div>
@@ -19,5 +19,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+#widget {
+  margin-top: 10px;
+  .btn {
+    width: 50px;
+    &:first-of-type {
+      margin-right: 10px;
+    }
+  }
+}
 </style>

@@ -33,7 +33,8 @@ export default {
         name: "gui",
         lastname: "amg",
         email: "gui@gui.com",
-        password: "123Soleil"
+        password: "123Soleil",
+        is_admin: false
       }
     };
   },
@@ -60,21 +61,8 @@ export default {
       errors += this.checkPasswordConfirm() ? 0 : 1;
       console.log("how many errors ? => ", errors);
 
-      if (!errors) {
-        
-        this.$store.dispatch("users/register", this.user);
-
-        return;
-
-        this.$store.commit("appEvents/setCurrentMessage", 
-        {text: "all good papy", level: "success"});
-
-      } else {
-
-        this.$store.commit("appEvents/setCurrentMessage", 
-        {text: "all wrong papy", level: "warning"});
-
-      }
+      if (!errors) this.$store.dispatch("users/register", this.user);
+      
     },
     toggleEyeIcon(evt, mode) {
       const icon = evt.target;

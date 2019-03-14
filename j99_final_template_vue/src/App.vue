@@ -47,6 +47,17 @@ body {
     cursor: pointer;
 }
 
+.btn {
+  outline: none;
+  border-radius: .3rem;
+  padding: 10px;
+}
+
+.btn:hover {
+  color: whitesmoke;
+  background: #42b983;
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -57,10 +68,10 @@ body {
 }
 #content_main {
   position: relative;
-  top: 60px;
+  top: 60px; /* on déplace le main vers le bas du document de la hauteur du header (fixed) */
 }
 .page {
   padding: 40px 20px;
-  min-height: calc(100vh - (60px + 200px));
+  min-height: calc(100vh - (60px + 150px)); /* 100 de la hauteur de l'écran - la hauteur du header + footer*/
 }
 </style>
